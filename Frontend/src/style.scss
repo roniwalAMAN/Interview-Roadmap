@@ -1,0 +1,28 @@
+@use "./style/button.scss";
+
+:root {
+    --bg-root-start: #061018;
+    --bg-root-end: #0d1f30;
+    --text-primary: #e8f4ff;
+    --accent: #ff8a3d;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    background: radial-gradient(circle at top right, #1c3851 0%, var(--bg-root-start) 48%, var(--bg-root-end) 100%);
+    color: var(--text-primary);
+    font-family: "Space Grotesk", "Sora", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.highlight{
+    color: var(--accent);
+}

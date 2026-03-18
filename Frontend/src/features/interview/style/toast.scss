@@ -1,0 +1,91 @@
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    animation: slideInRight 0.3s ease-out;
+    z-index: 9999;
+
+    &--success {
+        background-color: #17b890;
+        color: white;
+        border-left: 4px solid #129b79;
+    }
+
+    &--error {
+        background-color: #e45858;
+        color: white;
+        border-left: 4px solid #c94141;
+    }
+
+    &--info {
+        background-color: #3f8ee8;
+        color: white;
+        border-left: 4px solid #2d75c7;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 1;
+
+        svg {
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+    }
+
+    &__close {
+        background: none;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .toast {
+        min-width: 280px;
+        max-width: 90vw;
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+}
